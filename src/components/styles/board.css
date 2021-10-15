@@ -1,0 +1,75 @@
+.board {
+  flex-grow: 1;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.filter {
+  display: flex;
+  width: 100%;
+  padding-left: 10px;
+  align-items: center;
+}
+.filter span {
+  margin-right: 10px;
+}
+.header span {
+  opacity: 0.5;
+  margin-right: 5px;
+}
+.board {
+  overflow: scroll;
+}
+.board .header {
+  height: 140px;
+  flex-grow: 1;
+  padding-left: 10px;
+}
+
+.list {
+  float: left;
+  width: 300px;
+  padding: 10px;
+  height: 70vh;
+}
+.listCards {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.listHeader {
+  display: flex;
+  align-items: center;
+}
+.listHeader svg {
+  color: #ff3377;
+}
+.listHeader h4 {
+  flex-grow: 1;
+  margin: 0px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.actionBtn {
+  flex-grow: 1;
+}
+.actionBtn span {
+  color: #000;
+}
+.header button {
+  margin-left: 10px;
+  border-radius: 28px;
+  background-color: transparent;
+  border: 1px solid #18ab29;
+  color: #ff3377;
+}
+.rows {
+  display: flex;
+}

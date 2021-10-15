@@ -1,0 +1,52 @@
+.card {
+  margin-top: 15px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+}
+.cardHeader {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.cardHeader svg:nth-child(2) {
+  color: #ff3377;
+}
+
+.cardBody {
+  padding: 5px;
+}
+.cardTitle:hover {
+  background-color: #f8f8f8;
+  cursor: pointer;
+  min-width: 250px;
+}
+.cardFooter {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.cardFooter svg {
+  color: #282866;
+  opacity: 0.5;
+}
+.time {
+  flex-grow: 1;
+}
+.Avatar {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  background: red;
+  border: none;
+  color: white;
+  text-align: center;
+  font: 15px Arial, sans-serif;
+}
+
+.priorityText {
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0.5;
+}

@@ -1,0 +1,45 @@
+.addnewCardBtn {
+  margin: 10px 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.addnewCardBtn:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.newCardForm {
+  margin-top: 10px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 10px;
+  height: 120px;
+}
+
+.newCardForm button:nth-child(1) {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.newUserForm-content {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 5px;
+}
+.newUserForm-content input {
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-left: 5px;
+}
+.newUserForm-content button:nth-child(1) {
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-left: 5px;
+}
+.addnewuserBtn {
+  margin-left: 10px;
+}
