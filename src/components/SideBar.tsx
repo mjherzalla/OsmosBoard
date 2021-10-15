@@ -19,23 +19,23 @@ const Borad = (props: Props) => {
       <ul className="projectList">
         <li className="ActivePorject">
           <img src={icons[0].url} />
-          something
+          Osmos
         </li>
         <li>
           <img src={icons[1].url} />
-          something
+          Other Board
         </li>
         <li>
           <img src={icons[2].url} />
-          something
+          Exmple
         </li>
         <li>
           <img src={icons[3].url} />
-          something
+          Next
         </li>
         <li>
           <img src={icons[4].url} />
-          something
+          Hr project
         </li>
         <li>
           <img src={icons[5].url} />

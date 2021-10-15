@@ -37,6 +37,7 @@ const AddNewCard = (props: Props) => {
       priority: cardPriority,
       assignedTo: { userName: "none", avatarColor: "" },
       date: "now",
+      description: "enter here description",
     });
     props.setCards(newlist);
   };

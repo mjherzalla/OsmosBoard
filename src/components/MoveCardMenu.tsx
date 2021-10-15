@@ -50,6 +50,7 @@ export default function BasicPopover(props: Porps) {
 
   const moveCard = (listID: string, cardID: string) => {
     if (typeof listID === "undefined" || typeof cardID === "undefined") {
+      alert("listid" + listID + "cid" + cardID);
       return;
     }
     fetch(
@@ -78,6 +79,7 @@ export default function BasicPopover(props: Porps) {
 
     newlist.push({
       title: oldcardTitle,
+      cardID: cardID,
       listID: listID,
       priority: oldcardpriority,
       assignedTo: oldcardassignedTo,

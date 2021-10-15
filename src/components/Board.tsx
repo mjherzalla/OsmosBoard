@@ -84,7 +84,7 @@ const Borad = () => {
     <div className="board">
       <div className="header">
         <h2>
-          <span>Board: </span>Osmos Board
+          <span>Board: </span>Osmos
         </h2>
       </div>
       <div className="filter">

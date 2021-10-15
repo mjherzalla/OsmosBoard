@@ -49,6 +49,8 @@ export default function CardModal(props: Props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [usersMenuToggle, setUsersMenuToggle] = React.useState(false);
+  const [newDescription, setNewDescription] = React.useState("");
+  const [currentCardID] = React.useState(props.card.cardID);
   let cardColor = "";
   switch (props.card.priority) {
     case "low":
@@ -78,7 +80,7 @@ export default function CardModal(props: Props) {
           "Content-Type": "application/json",
         },
       }
-    ).then(() => () => setUsersMenuToggle(!usersMenuToggle));
+    ).then(() => setUsersMenuToggle(!usersMenuToggle));
 
     const newcard = props.cards.slice();
 
@@ -101,6 +103,42 @@ export default function CardModal(props: Props) {
     props.setCards(newcard);
   };
 
+  const updateCard = (cardID: string) => {
+    fetch(
+      "http://localhost:3001/updateCard?cardID=" +
+        cardID +
+        "&description=" +
+        newDescription,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    ).then(() => console.log("good"));
+
+    const newcardCopy = props.cards.slice();
+
+    var index = newcardCopy.findIndex(function (o: any) {
+      return o.cardID === props.card.cardID;
+    });
+    const oldcardTitle = newcardCopy[index].title;
+    const oldcardpriority = newcardCopy[index].priority;
+    const oldcardListID = newcardCopy[index].listID;
+    const oldcarddate = newcardCopy[index].date;
+    const oldcardassgin = newcardCopy[index].assignedTo;
+    if (index !== -1) newcardCopy.splice(index, 1);
+
+    newcardCopy.push({
+      title: oldcardTitle,
+      listID: oldcardListID,
+      priority: oldcardpriority,
+      description: newDescription,
+      date: oldcarddate,
+      assignedTo: oldcardassgin,
+    });
+    props.setCards(newcardCopy);
+  };
   return (
     <div>
       <a onClick={handleOpen} className="cardTitle">
@@ -181,7 +219,20 @@ export default function CardModal(props: Props) {
             </ul>
           )}
 
-          <p contentEditable={true}>{props.card.description} </p>
+          <p
+            suppressContentEditableWarning={true}
+            contentEditable={true}
+            style={{
+              width: "100%",
+              minHeight: 200,
+              backgroundColor: "#f8f8f8",
+              padding: 5,
+            }}
+            onBlur={(e) => setNewDescription(e.target.innerText)}
+          >
+            {props.card.description}
+          </p>
+          <button onClick={() => updateCard(currentCardID)}>Save</button>
         </Box>
       </Modal>
     </div>
